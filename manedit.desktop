@@ -7,5 +7,5 @@ Icon=manedit.png
 Terminal=false
 Type=Application
 Encoding=UTF-8
-Categories=Application;Utility;TextEditor;
+Categories=GTK;TextEditor;
 # vi: encoding=utf-8
