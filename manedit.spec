@@ -31,7 +31,7 @@ stron podrêcznika. Pozwala na kompletn± edycjê stron wykorzystuj±c
 interfejs XML-owy z ci±g³ym podgl±dem. ManEdit u¿ywa kontrolek
 GTK+ i dzia³a w ¶rodowisku X Window.
 
-%prep -q
+%prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
