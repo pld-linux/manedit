@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=ManEdit
 Comment=UNIX manual page integrated development environment
-Comment[pl]=Zintegrowane ¶rodowisko uniksowe do tworzenia stron podrênika
+Comment[pl]=Zintegrowane środowisko uniksowe do tworzenia stron podręcznika
 Exec=manedit
 Icon=manedit.png
 Terminal=0
