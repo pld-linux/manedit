@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ManEdit
+Comment=UNIX manual page integrated development environment
+Comment[pl]=Zintegrowane ¶rodowisko uniksowe do tworzenia stron podrênika
+Exec=manedit
+Icon=manedit.png
+Terminal=0
+Type=Application
+# vi: encoding=utf-8
