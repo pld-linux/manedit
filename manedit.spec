@@ -57,14 +57,12 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Development/Editors}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
-gzip -9nf AUTHORS README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS README
 %attr(755,root,root) %{_bindir}/man*
 %{_datadir}/manedit
 %{_mandir}/man1/*.1*
