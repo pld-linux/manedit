@@ -1,0 +1,61 @@
+--- manedit-0.5.6/manedit/platforms.ini.orig	Sat Mar 30 19:21:19 2002
++++ manedit-0.5.6/manedit/platforms.ini	Sat Mar 30 19:33:49 2002
+@@ -23,8 +23,7 @@
+ Platform = UNIX
+         Description = For most any UNIX system
+         PREFIX = /usr/
+-        CFLAGS = -Wall -O6 -funroll-loops -fomit-frame-pointer -ffast-math \
+--D__USE_BSD
++        CFLAGS = -Wall $(OPTFLAGS) -funroll-loops -ffast-math -D__USE_BSD
+         LIBS = -lm
+         LIB_DIR =
+ 	CC = cc
+@@ -95,8 +94,7 @@
+ Platform = Linux
+ 	Description = For most any Linux system
+ 	PREFIX = /usr/
+-	CFLAGS = -Wall -O6 -funroll-loops -fomit-frame-pointer -ffast-math \
+--finline-functions -D__USE_BSD
++	CFLAGS = -Wall $(OPTFLAGS) -funroll-loops -ffast-math -finline-functions -D__USE_BSD
+ 	LIBS = -lm
+ 	LIB_DIR =
+         CC = cc
+@@ -122,38 +120,6 @@
+                 Description = Just adds -g to the CFLAGS for debugging
+                 MustExist = No
+                 FeatureCFLAGS = -g
+-        PlatformFeature = arch-i486
+-                Description = Adds -march=i486 for 486 specific optimizations
+-                MustExist = Preferred  
+-                FeatureCFLAGS = -march=i486
+-                FeatureDepend = i486
+-                        DependType = Machine
+-                        MustExist = Yes
+-                        DependMachine = i486
+-        PlatformFeature = arch-i586
+-                Description = Adds -march=i586 for Pentium specific optimizations
+-                MustExist = Preferred
+-                FeatureCFLAGS = -march=i586
+-		FeatureDepend = i586
+-			DependType = Machine
+-			MustExist = Yes
+-			DependMachine = i586
+-        PlatformFeature = arch-i686
+-                Description = Adds -march=i686 for Pentium Pro specific optimizations
+-                MustExist = Preferred
+-                FeatureCFLAGS = -march=i686
+-                FeatureDepend = i686
+-                        DependType = Machine
+-                        MustExist = Yes
+-                        DependMachine = i686
+-        PlatformFeature = arch-pentiumpro
+-                Description = Adds -march=pentiumpro for Pentium Pro specific optimizations
+-                MustExist = Preferred
+-                FeatureCFLAGS = -march=pentiumpro
+-                FeatureDepend = pentiumpro
+-                        DependType = Machine
+-                        MustExist = Yes
+-                        DependMachine = pentiumpro
+         PlatformFeature = zlib
+                 Description = ZLib
+                 MustExist = Preferred

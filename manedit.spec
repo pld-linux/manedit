@@ -2,13 +2,14 @@ Summary:	UNIX manual page integrated development environment
 Summary(pl):	Zintegrowane ¶rodowisko uniksowe do tworzenia stron podrêcznika
 Name:		manedit
 Version:	0.5.6
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-bzip2.patch
+Patch1:		%{name}-opt.patch
 URL:		http://wolfpack.twu.net/ManEdit/
 BuildRequires:	bzip2-devel
 BuildRequires:	gtk+-devel
@@ -27,12 +28,13 @@ and requires the X Window Systems.
 %description -l pl
 ManEdit jest zintegrowanym ¶rodowiskiem uniksowym do tworzenia
 stron podrêcznika. Pozwala na kompletn± edycjê stron wykorzystuj±c
-interfejs XML'owy z ci±g³ym podgl±dem. ManEdit u¿ywa kontrolek
+interfejs XML-owy z ci±g³ym podgl±dem. ManEdit u¿ywa kontrolek
 GTK+ i dzia³a w ¶rodowisku X Window.
 
 %prep -q
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 # This is a nasty hack to trick configure
@@ -40,15 +42,17 @@ GTK+ i dzia³a w ¶rodowisku X Window.
 ./configure Linux
 echo -e "Linux\n"`grep UTS_RELEASE /usr/include/linux/version.h|awk '{print $3}'|sed 's/"//g'`"\n"%{_target_cpu} > manedit/this_platform.ini
 
-./configure Linux --prefix=$RPM_BUILD_ROOT%{_prefix} -v
+./configure Linux --prefix=%{_prefix} -v
 
-%{__make} all
+%{__make} all \
+	OPTFLAGS="%{rpmcflags} %{!?debug:-fomit-frame-pointer}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Development/Editors}
 
-%{__make} install
+%{__make} install \
+	PREFIX=$RPM_BUILD_ROOT%{_prefix}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/Editors
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
