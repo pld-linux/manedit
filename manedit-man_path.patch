@@ -1,0 +1,12 @@
+diff -urN aaa/manedit-0.5.8/manedit/Makefile.install.UNIX manedit-0.5.8/manedit/Makefile.install.UNIX
+--- aaa/manedit-0.5.8/manedit/Makefile.install.UNIX	Mon Jan 20 07:17:00 2003
++++ manedit-0.5.8/manedit/Makefile.install.UNIX	Tue Jan 28 21:35:37 2003
+@@ -30,7 +30,7 @@
+ BIN_DIR   = $(PREFIX)/bin
+ ICONS_DIR = $(PREFIX)/share/icons
+ DATA_DIR  = $(PREFIX)/share/$(BIN)
+-MAN_DIR   = $(PREFIX)/man/man1
++MAN_DIR   = $(PREFIX)/share/man/man1
+ 
+ install_bin:
+ 	$(MKDIR) $(MKDIRFLAGS) $(BIN_DIR)
