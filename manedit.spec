@@ -2,7 +2,7 @@ Summary:	UNIX manual page integrated development environment
 Summary(pl):	Zintegrowane ¶rodowisko uniksowe do tworzenia stron podrêcznika
 Name:		manedit
 Version:	0.5.10
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
@@ -53,12 +53,12 @@ echo -e "Linux\n"`grep UTS_RELEASE /usr/include/linux/version.h|awk '{print $3}'
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Editors/Man}
+install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 
 %{__make} install \
 	PREFIX=$RPM_BUILD_ROOT%{_prefix}
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Editors/Man
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
@@ -70,5 +70,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/man*
 %{_datadir}/manedit
 %{_mandir}/man1/*.1*
-%{_applnkdir}/Editors/Man/*
+%{_desktopdir}/*
 %{_pixmapsdir}/*
