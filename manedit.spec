@@ -1,7 +1,7 @@
 Summary:	UNIX manual page integrated development environment
 Summary(pl):	Zintegrowane ¶rodowisko uniksowe do tworzenia stron podrêcznika
 Name:		manedit
-Version:	0.5.8
+Version:	0.5.9
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
@@ -18,7 +18,6 @@ BuildRequires:	bzip2-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 ManEdit is a UNIX Manual Page Integrated Development Environment.
