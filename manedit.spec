@@ -2,7 +2,7 @@ Summary:	UNIX manual page integrated development environment
 Summary(pl):	Zintegrowane ¶rodowisko uniksowe do tworzenia stron podrêcznika
 Name:		manedit
 Version:	0.5.10
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
@@ -40,13 +40,15 @@ GTK+ i dzia³a w ¶rodowisku X Window.
 %patch3 -p1
 %patch4 -p1
 
+%{__perl} -pi -e 's@/lib/$@/%{_lib}/@' manedit/platforms.ini
+
 %build
 # This is a nasty hack to trick configure
 # (proper way is to hack ./configure or pconf)
-./configure Linux
 echo -e "Linux\n"`grep UTS_RELEASE /usr/include/linux/version.h|awk '{print $3}'|sed 's/"//g'`"\n"%{_target_cpu} > manedit/this_platform.ini
 
-./configure Linux --prefix=%{_prefix} -v
+./configure Linux -v \
+	--prefix=%{_prefix}
 
 %{__make} all \
 	OPTFLAGS="%{rpmcflags} %{!?debug:-fomit-frame-pointer}"
