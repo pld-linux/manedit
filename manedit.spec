@@ -17,6 +17,7 @@ Patch4:		%{name}-man_path.patch
 URL:		http://wolfpack.twu.net/ManEdit/
 BuildRequires:	bzip2-devel
 BuildRequires:	gtk+-devel
+BuildRequires:	perl-base
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
