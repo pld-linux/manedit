@@ -1,12 +1,13 @@
 diff -urN aaa/manedit-0.5.8/manedit/Makefile.install.UNIX manedit-0.5.8/manedit/Makefile.install.UNIX
 --- aaa/manedit-0.5.8/manedit/Makefile.install.UNIX	Mon Jan 20 07:17:00 2003
 +++ manedit-0.5.8/manedit/Makefile.install.UNIX	Tue Jan 28 21:28:27 2003
-@@ -12,9 +12,9 @@
+@@ -13,9 +13,9 @@
  #
  
  INSTALL      = install
 -INSTBINFLAGS = -m 0755 -s
 +INSTBINFLAGS = -m 0755
+ INSTSCRFLAGS = -m 0755
  INSTUIDFLAGS = -m 4755
 -INSTLIBFLAGS = -m 0755 -s
 +INSTLIBFLAGS = -m 0755
