@@ -6,7 +6,7 @@ Release:	2
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
-Patch0:		manedit-bzip2.patch
+Patch0:		%{name}-bzip2.patch
 BuildRequires:	bzip2-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	zlib-devel
