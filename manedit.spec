@@ -1,16 +1,18 @@
 Summary:	UNIX manual page integrated development environment
 Summary(pl):	Zintegrowane ¶rodowisko uniksowe do tworzenia stron podrêcznika
 Name:		manedit
-Version:	0.5.6
-Release:	4
+Version:	0.5.8
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
+Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tgz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-bzip2.patch
 Patch1:		%{name}-opt.patch
 Patch2:		%{name}-glibc.patch
+Patch3:		%{name}-dont_strip.patch
+Patch4:		%{name}-man_path.patch
 URL:		http://wolfpack.twu.net/ManEdit/
 BuildRequires:	bzip2-devel
 BuildRequires:	gtk+-devel
@@ -35,6 +37,8 @@ GTK+ i dzia³a w ¶rodowisku X Window.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 %build
 # This is a nasty hack to trick configure
