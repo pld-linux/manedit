@@ -10,6 +10,7 @@ Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-bzip2.patch
 Patch1:		%{name}-opt.patch
+Patch2:		%{name}-glibc.patch
 URL:		http://wolfpack.twu.net/ManEdit/
 BuildRequires:	bzip2-devel
 BuildRequires:	gtk+-devel
@@ -35,6 +36,7 @@ GTK+ i dzia³a w ¶rodowisku X Window.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 # This is a nasty hack to trick configure

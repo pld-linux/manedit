@@ -1,0 +1,11 @@
+--- manedit-0.5.6/include/xsw_ctype.h.orig	Tue Mar 12 23:02:37 2002
++++ manedit-0.5.6/include/xsw_ctype.h	Fri Nov  1 20:31:53 2002
+@@ -1,7 +1,7 @@
+ // xsw_ctype.h
+ // This is intended as a prototype for files using the global/ctype.cpp file.
+ 
+-#if !defined(__FreeBSD__) && !defined(__NetBSD__)
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__GLIBC__)
+ # if defined(__cplusplus) || defined(c_plusplus)
+ 
+ #ifndef isblank
