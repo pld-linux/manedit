@@ -1,12 +1,12 @@
 Summary:	UNIX manual page integrated development environment
 Summary(pl):	Zintegrowane ¶rodowisko uniksowe do tworzenia stron podrêcznika
 Name:		manedit
-Version:	0.5.11
-Release:	2
+Version:	0.5.12
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
 Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
-# Source0-md5:	0059e183650cf7bae18dd1de4fff1352
+# Source0-md5:	8a2ed884ece57c301ce1fc8b421b9ee8
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-bzip2.patch
