@@ -1,5 +1,5 @@
 Summary:	UNIX manual page integrated development environment
-Summary(pl):	Zintegrowane ¶rodowisko uniksowe do tworzenia stron podrêcznika
+Summary(pl.UTF-8):   Zintegrowane Å›rodowisko uniksowe do tworzenia stron podrÄ™cznika
 Name:		manedit
 Version:	0.5.12
 Release:	1
@@ -27,11 +27,11 @@ It has full UNIX manual page editing capabilities using an XML
 interface with instant preview. ManEdit uses the GTK+ widget set
 and requires the X Window Systems.
 
-%description -l pl
-ManEdit jest zintegrowanym ¶rodowiskiem uniksowym do tworzenia
-stron podrêcznika. Pozwala na kompletn± edycjê stron wykorzystuj±c
-interfejs XML-owy z ci±g³ym podgl±dem. ManEdit u¿ywa kontrolek
-GTK+ i dzia³a w ¶rodowisku X Window.
+%description -l pl.UTF-8
+ManEdit jest zintegrowanym Å›rodowiskiem uniksowym do tworzenia
+stron podrÄ™cznika. Pozwala na kompletnÄ… edycjÄ™ stron wykorzystujÄ…c
+interfejs XML-owy z ciÄ…gÅ‚ym podglÄ…dem. ManEdit uÅ¼ywa kontrolek
+GTK+ i dziaÅ‚a w Å›rodowisku X Window.
 
 %prep
 %setup -q
