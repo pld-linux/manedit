@@ -1,5 +1,5 @@
 Summary:	UNIX manual page integrated development environment
-Summary(pl.UTF-8):   Zintegrowane środowisko uniksowe do tworzenia stron podręcznika
+Summary(pl.UTF-8):	Zintegrowane środowisko uniksowe do tworzenia stron podręcznika
 Name:		manedit
 Version:	0.5.12
 Release:	1
