@@ -1,12 +1,12 @@
 Summary:	UNIX manual page integrated development environment
 Summary(pl.UTF-8):	Zintegrowane środowisko uniksowe do tworzenia stron podręcznika
 Name:		manedit
-Version:	0.5.12
+Version:	1.2.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Editors
-Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
-# Source0-md5:	8a2ed884ece57c301ce1fc8b421b9ee8
+Source0:	http://wolfsinger.com/~wolfpack/packages/%{name}-%{version}.tar.bz2
+# Source0-md5:	a7ee1835e32ed3c9279412af7caf13ef
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-bzip2.patch
@@ -14,7 +14,8 @@ Patch1:		%{name}-opt.patch
 Patch2:		%{name}-glibc.patch
 Patch3:		%{name}-dont_strip.patch
 Patch4:		%{name}-man_path.patch
-URL:		http://wolfpack.twu.net/ManEdit/
+Patch5:		%{name}-man.patch
+URL:		http://freecode.com/projects/manedit
 BuildRequires:	bzip2-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	perl-base
@@ -25,7 +26,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ManEdit is a UNIX Manual Page Integrated Development Environment.
 It has full UNIX manual page editing capabilities using an XML
 interface with instant preview. ManEdit uses the GTK+ widget set
-and requires the X Window Systems.
+and requires the X Window System.
 
 %description -l pl.UTF-8
 ManEdit jest zintegrowanym środowiskiem uniksowym do tworzenia
@@ -40,6 +41,7 @@ GTK+ i działa w środowisku X Window.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 %{__perl} -pi -e 's@/lib/$@/%{_lib}/@' manedit/platforms.ini
 
@@ -59,7 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 
 %{__make} install \
-	PREFIX=$RPM_BUILD_ROOT%{_prefix}
+	PREFIX=$RPM_BUILD_ROOT%{_prefix} \
+	ICONS_DIR=$RPM_BUILD_ROOT%{_pixmapsdir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -70,8 +73,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README
-%attr(755,root,root) %{_bindir}/man*
+%attr(755,root,root) %{_bindir}/manedit
+%attr(755,root,root) %{_bindir}/manview
+%attr(755,root,root) %{_bindir}/manwrap
 %{_datadir}/manedit
-%{_mandir}/man1/*.1*
-%{_desktopdir}/*.desktop
-%{_pixmapsdir}/*
+%{_mandir}/man1/manedit.1*
+%{_desktopdir}/manedit.desktop
+%{_pixmapsdir}/manedit.png
+%{_pixmapsdir}/manedit.xpm
+%{_pixmapsdir}/manview.xpm

@@ -1,0 +1,15 @@
+--- manedit-1.2.1/manedit/makefile_append.ini.orig	2014-02-02 11:24:59.062711006 +0100
++++ manedit-1.2.1/manedit/makefile_append.ini	2014-02-02 11:49:36.995982312 +0100
+@@ -55,9 +55,9 @@
+ 
+ manpage:
+ 	@echo "Generating manual page $(BIN).1.bz2"
+-	@-$(SED) 's|%%PREFIX%%|$(PREFIX)|g ; \
+-                  s|%%LOCALBASE%%|${LOCALBASE}|g ; \
+-                  s|%%X11BASE%%|${X11BASE}|g' $(BIN).1 > $(BIN).1.out
++	@-$(SED) -e 's|%%PREFIX%%|$(PREFIX)|g' \
++                 -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
++                 -e 's|%%X11BASE%%|${X11BASE}|g' $(BIN).1 > $(BIN).1.out
+ 	@-$(BZIP2) $(BIN).1.out --stdout > $(BIN).1.bz2
+ 
+ modules: $(OBJ_C) $(OBJ_CPP)
